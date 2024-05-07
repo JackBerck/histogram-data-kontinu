@@ -1,5 +1,3 @@
-import { dataInput } from "./domElements.js";
-
 function autosize() {
   let el = this;
   setTimeout(function () {
@@ -9,3 +7,4 @@ function autosize() {
 }
 
 export { autosize };
+// the size changes automatically according to the input amount - done
