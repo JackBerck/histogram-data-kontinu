@@ -1,4 +1,4 @@
-import { totalClass, classLength } from "./formula.js";
+import { totalClass, classLength } from "../calculation/formula.js";
 import { svg, xLine, yLine } from "../dom/domElements.js";
 import { groupedData, barFrequency } from "../input/groupedValue.js";
 import { getInputValue } from "../input/dataInput.js";
@@ -26,6 +26,11 @@ function barHeight() {
 
 function createBar() {
   const bars = [];
+  const barsContainer = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "g"
+  );
+  barsContainer.classList.add("bar-container");
 
   groupedData().forEach((group, index) => {
     const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
@@ -39,14 +44,16 @@ function createBar() {
   });
 
   bars.forEach((bar) => {
-    svg.appendChild(bar);
+    barsContainer.appendChild(bar);
   });
+
+  svg.appendChild(barsContainer);
 }
 
 function createAxesLabels() {
   const yLabels = document.createElementNS("http://www.w3.org/2000/svg", "g");
   yLabels.classList.add("labels", "y-labels");
-  const yValues = [...createFrequencyLabels()];
+  const yValues = [...barFrequency()];
   yValues.forEach((value) => {
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
     text.textContent = `${value}`;
@@ -88,15 +95,4 @@ function createClassLabels() {
   return classLabels;
 }
 
-function createFrequencyLabels() {
-  const frequencyValues = groupedData().map((value) => value.length);
-  return frequencyValues;
-}
-
-export {
-  barWidth,
-  barHeight,
-  createBar,
-  createAxesLabels,
-  createFrequencyLabels,
-};
+export { barWidth, barHeight, createBar, createAxesLabels };

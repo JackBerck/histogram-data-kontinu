@@ -117,7 +117,7 @@ button {
 }
 
 /* Histogram Visualization */
-.graph .labels.y-labels {
+.graph .labels-title {
   text-anchor: end;
 }
 

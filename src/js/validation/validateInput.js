@@ -4,14 +4,18 @@ import {
   createBar,
   createAxesLabels,
   barHeight,
-  createFrequencyLabels,
-} from "../calculation/chart.js";
+} from "../visualization/chart.js";
 import { getInputValue } from "../input/dataInput.js";
-import { groupedData } from "../input/groupedValue.js";
+import { groupedData, barFrequency } from "../input/groupedValue.js";
+import { resetBars, resetAxesLabels } from "../visualization/svgReset.js";
 
 function validateInput(dataValue) {
   const isValid = /^\d+(\s+\d+)*$/.test(dataValue);
 
+  if (document.querySelector(".bar-container")) {
+    resetBars();
+    resetAxesLabels();
+  }
   if (isValid) {
     console.log("Input valid: ", dataValue);
     createBar();
@@ -19,7 +23,7 @@ function validateInput(dataValue) {
     console.log(groupedData());
     console.log(classLength());
     console.log(range());
-    console.log(createFrequencyLabels());
+    console.log(barFrequency());
     console.log(barHeight());
     console.log(getInputValue());
   } else {
