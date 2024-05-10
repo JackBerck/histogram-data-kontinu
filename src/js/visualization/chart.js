@@ -68,6 +68,17 @@ function createAxesLabels() {
     text.setAttribute("y", 370 - barHeight() * value);
     text.classList.add("label-title");
     yLabels.appendChild(text);
+
+    const strokeLine = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "line"
+    );
+    strokeLine.classList.add("stroke-line");
+    strokeLine.setAttribute("x1", 130);
+    strokeLine.setAttribute("x2", 705);
+    strokeLine.setAttribute("y1", 370 - barHeight() * value);
+    strokeLine.setAttribute("y2", 370 - barHeight() * value);
+    yLabels.appendChild(strokeLine);
   });
   svg.appendChild(yLabels);
 
@@ -78,7 +89,7 @@ function createAxesLabels() {
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
     text.textContent = `${value}`;
     text.setAttribute("x", 120 + (barWidth() + index * barWidth()));
-    text.setAttribute("y", 380);
+    text.setAttribute("y", 385);
     text.classList.add("label-title");
     xLabels.appendChild(text);
   });
@@ -103,3 +114,5 @@ function createClassLabels() {
 }
 
 export { barWidth, barHeight, createBar, createAxesLabels };
+
+// making bar, axeslabes, and stroke line to spoted the height of the bars - done i guess

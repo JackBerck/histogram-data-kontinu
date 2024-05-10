@@ -11,3 +11,5 @@ function resetAxesLabels() {
 }
 
 export { resetBars, resetAxesLabels };
+
+// just to reset the bars when users inputed and submited more than one - done

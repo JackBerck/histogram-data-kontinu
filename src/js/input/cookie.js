@@ -1,6 +1,6 @@
 import { form, dataInput } from "../dom/domElements.js";
 
-function createCookie() {
+function createSessionStorage() {
   form.addEventListener("submit", function () {
     const userData = JSON.parse(sessionStorage.getItem("userData")) || {};
     const newData = dataInput.value;
@@ -20,4 +20,6 @@ function createCookie() {
   });
 }
 
-export { createCookie };
+export { createSessionStorage };
+
+// storing input data in session storage - done

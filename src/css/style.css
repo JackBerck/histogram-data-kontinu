@@ -128,7 +128,7 @@ button {
 }
 
 .graph .grid {
-  stroke: #ccc;
+  stroke: black;
   stroke-dasharray: 0;
   stroke-width: 1;
 }
@@ -156,5 +156,12 @@ button {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #ccc;
   padding: 5px;
-  transition: opacity 0.3s ease-in-out; /* Efek transisi untuk opasitas */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Stroke Line */
+.stroke-line {
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-dasharray: 0;
+  stroke-width: 1;
 }

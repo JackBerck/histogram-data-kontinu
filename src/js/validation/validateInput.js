@@ -11,9 +11,8 @@ function validateInput(dataValue) {
     resetAxesLabels();
   }
   if (isValid) {
-    console.log("Input valid: ", dataValue);
-    createBar();
     createAxesLabels();
+    createBar();
     legendBox();
   } else {
     alert("Input harus berupa angka dan dipisahkan dengan spasi.");

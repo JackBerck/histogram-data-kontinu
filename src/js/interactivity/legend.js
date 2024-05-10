@@ -13,7 +13,6 @@ function legendBox() {
       infoBox.style.top = `${y}px`;
       infoBox.style.display = "block";
       infoBox.style.opacity = 1;
-      console.log("cek");
     });
     bar.addEventListener("mouseout", function () {
       infoBox.style.opacity = 0;
@@ -23,3 +22,5 @@ function legendBox() {
 }
 
 export { legendBox };
+
+// displaying an infographic of the frequency and range of each bar - done
