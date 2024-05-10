@@ -34,7 +34,7 @@ function createBar() {
 
   groupedData().forEach((group, index) => {
     const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    bar.setAttribute("x", 90 + (barWidth() + barWidth() * index));
+    bar.setAttribute("x", 130 + (barWidth() + barWidth() * index));
     bar.setAttribute("y", 370 - barHeight() * group.length);
     bar.setAttribute("width", barWidth());
     bar.setAttribute("height", barHeight() * group.length);
@@ -70,7 +70,7 @@ function createAxesLabels() {
   xValues.forEach((value, index) => {
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
     text.textContent = `${value}`;
-    text.setAttribute("x", 85 + (barWidth() + index * barWidth()));
+    text.setAttribute("x", 120 + (barWidth() + index * barWidth()));
     text.setAttribute("y", 380);
     text.classList.add("label-title");
     xLabels.appendChild(text);

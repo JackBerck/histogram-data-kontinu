@@ -1,11 +1,10 @@
 import { form, dataInput } from "./dom/domElements.js";
 import { submitEvent } from "./validation/validateInput.js";
 import { autosize } from "./interactivity/autoExpand.js";
+import { createCookie } from "./input/cookie.js";
 
-// Validate input user
 form.addEventListener("submit", submitEvent);
 
-// DOM Selection Graph Elements
-
-// Autosize Textarea
 dataInput.addEventListener("keydown", autosize);
+
+createCookie();
