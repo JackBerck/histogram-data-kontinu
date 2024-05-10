@@ -21,6 +21,16 @@
         font-family: "Asana Math";
         src: url("./src/fonts/Asana-Math.otf");
       }
+
+      .info-box {
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+        pointer-events: none; /* agar tidak mengganggu event mouse */
+        display: none; /* sembunyikan secara default */
+      }
     </style>
   </head>
   <body>
@@ -83,7 +93,7 @@
         <text x="70" y="200" class="label-title">Frekuensi</text>
       </g>
     </svg>
-
+    <div class="info-box"></div>
     <!-- Histogram Visualization End -->
     <script type="module" src="./src/js/app.js"></script>
   </body>

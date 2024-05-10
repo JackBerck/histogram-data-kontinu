@@ -32,6 +32,9 @@ function createBar() {
   );
   barsContainer.classList.add("bar-container");
 
+  let lowerLimit = Math.min(...getInputValue());
+  let upperLimit = lowerLimit + classLength();
+
   groupedData().forEach((group, index) => {
     const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
     bar.setAttribute("x", 130 + (barWidth() + barWidth() * index));
@@ -39,6 +42,10 @@ function createBar() {
     bar.setAttribute("width", barWidth());
     bar.setAttribute("height", barHeight() * group.length);
     bar.setAttribute("fill", "#9370db");
+    bar.setAttribute("bar-frequency", group.length);
+    bar.setAttribute("bar-range", `${lowerLimit} - ${upperLimit}`);
+    lowerLimit = upperLimit;
+    upperLimit += classLength();
 
     bars.push(bar);
   });
@@ -57,7 +64,7 @@ function createAxesLabels() {
   yValues.forEach((value) => {
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
     text.textContent = `${value}`;
-    text.setAttribute("x", 80);
+    text.setAttribute("x", 115);
     text.setAttribute("y", 370 - barHeight() * value);
     text.classList.add("label-title");
     yLabels.appendChild(text);
